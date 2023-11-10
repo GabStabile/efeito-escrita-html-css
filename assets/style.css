@@ -1,0 +1,80 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #272727;
+    color: #dfdfdf;
+    font-weight: 700;
+}
+
+/* Frase inicial */
+.txt-animado {
+    font-size: 45px;
+    font-weight: 300;
+    font-family: arial;
+}
+
+/* Frase inicial - posição*/
+.txt-animado span{
+    position: relative;
+}
+
+.txt-animado span::before{
+    content: "";
+    color: #3b3bf1;
+    animation: evolution 20s infinite;
+}
+
+.txt-animado span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 1px solid #3b3bf1;
+    right: -9px;
+    animation: war .8s infinite, animationdigit 20s steps(20) infinite; 
+    width: calc(100% + 11px);
+    background-color: #272727;
+
+}
+
+@keyframes animationdigit {
+    10%, 20%, 30%, 35%, 50%, 55%, 70%, 90%, 95%{
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 80%, 85%{
+        width: calc(100% + 18px);
+    }
+}
+
+@keyframes war {
+    0% {
+        border-left: 1px solid #272727;
+    }
+}
+
+@keyframes evolution {
+    0%,20%{
+        content: "desenvolvedor.";
+    }
+    21%,40% {
+        content: "designer.";
+    }
+    41%,60% {
+        content: "solucionador de problemas.";
+    }
+    61%,80% {
+        content: "sua solução!";
+    }
+}
+
+.desenvolvidopor {
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    color: #dfdfdf;
+    font-weight: 200;
+    flex-direction: row;
+    justify-content: flex-end;
+    font-family: arial;
+}
